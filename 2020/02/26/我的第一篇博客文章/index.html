@@ -59,7 +59,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">38字</span>
+            <span class="post-count">468字</span>
         </span>
     </span>
 
@@ -95,16 +95,63 @@
       
 
       
-      <h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>1.安装Node.js</p>
+      <h2 id="第一步-环境搭建"><a href="#第一步-环境搭建" class="headerlink" title="第一步 环境搭建"></a>第一步 环境搭建</h2><p>1.安装Node.js</p>
+<p><a href="https://nodejs.org" target="_blank" rel="noopener">https://nodejs.org</a></p>
 <p>2.安装Git</p>
 <hr>
-<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><p>1.通过npm包管理工具指定网址安装cnpm</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
+<h2 id="第二步-安装Hexo"><a href="#第二步-安装Hexo" class="headerlink" title="第二步 安装Hexo"></a>第二步 安装Hexo</h2><ul>
+<li>win系统打开终端<ul>
+<li>win健 + R ,输入cmd</li>
+<li>开始菜单鼠标右键,选择PowerShell(尽量以管理员模式下进行)</li>
+<li>也可以打开VS Code,按Ctrl + ` 打开终端</li>
+</ul>
+</li>
+</ul>
+<p>1.通过npm包管理工具指定网址安装cnpm</p>
+<p>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
+<p>2.利用cnpm来安装全局hexo</p>
+<p>cnpm install -g hexo-cli</p>
+<p>3.验证hexo安装是否成功</p>
+<p>hexo -v</p>
 <hr>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><h2 id="www-codesheep-cn"><a href="#www-codesheep-cn" class="headerlink" title="www.codesheep.cn"></a><a href="http://www.codesheep.cn" target="_blank" rel="noopener">www.codesheep.cn</a></h2>
+<h2 id="第三步-创建博客"><a href="#第三步-创建博客" class="headerlink" title="第三步 创建博客"></a>第三步 创建博客</h2><p>1.新建文件夹mkdir + 文件名, 文件名不需要加”</p>
+<p>例: </p>
+<ul>
+<li>mkdir blog 就创建了文件名为blog的文件夹</li>
+</ul>
+<p><strong>如果在搭建博客过程中出现任何问题,大不了把文件夹删掉重来,无需担心</strong></p>
+<p>2.进入创建之后的文件夹</p>
+<p>例:</p>
+<ul>
+<li>cd blog</li>
+</ul>
+<p>3.初始化博客(新建一个网站)</p>
+<p>hexo init</p>
+<p>4.出现Start blogging with Hexo! 证明初始化成功</p>
+<p>5.dir命令可以查看当前目录下的所有文件</p>
+<p>6.hexo server命令启动服务器(可简写为hexo s)</p>
+<p>7.可打开浏览器,在网址栏输入localhost:4000,回车键即可查看</p>
+<hr>
+<h2 id="第四步-新建文章"><a href="#第四步-新建文章" class="headerlink" title="第四步 新建文章"></a>第四步 新建文章</h2><p>1.hexo new 文章名 新建一篇文章 (<strong>注意文章名需要加”</strong>)</p>
+<p>2.命令cd source/_posts 进入资源目录 </p>
+<p>3.dir 可查看目录下新建的文章</p>
+<hr>
+<h2 id="第五步-编辑文章"><a href="#第五步-编辑文章" class="headerlink" title="第五步 编辑文章"></a>第五步 编辑文章</h2><p>1.可使用编辑器VS Code等, Markdown软件Typora等打开后缀名为.md的文件</p>
+<p>2.编辑文章内容参考Markdown语法即可</p>
+<p>3.编辑完成之后返回到主目录,也就是一开始新建的文件夹</p>
+<p>例:</p>
+<ul>
+<li>cd ../..</li>
+</ul>
+<p>4.hexo clean 清除缓存文件</p>
+<p>5.hexo generate 生成静态文件</p>
+<p>6.hexo server 启动服务器</p>
+<p>7.本地搭建已经完成</p>
+<h2 id="第六步-部署到GitHub"><a href="#第六步-部署到GitHub" class="headerlink" title="第六步 部署到GitHub"></a>第六步 部署到GitHub</h2><p>1.</p>
+<hr>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a></p>
+<hr>
+
       
       <!-- reward -->
       

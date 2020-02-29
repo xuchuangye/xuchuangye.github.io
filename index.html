@@ -188,7 +188,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-GitHub-Node-js/" rel="tag">Hexo GitHub Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/" rel="tag">命名规范</a></li></ul>
                     </div>
                 </section>
                 
@@ -298,28 +298,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>命名常常被认为是编程中的细节问题,其重要性往往被低估.而所谓的工匠精神,往往就是体现在细节之处.一个名字虽然并不影响程序的执行,但是却对代码的表达力和可读性有着重要的影响.</p>
-<p>在程序员的工作中,大部分的时间都在阅读和理解代码,好的命名能够让代码的概念清晰,增强代码的表达力;词不达意的命名会破坏我们思考的连贯性,分散有限的注意力.</p>
-<hr>
-<h2 id="命名的力量"><a href="#命名的力量" class="headerlink" title="命名的力量"></a>命名的力量</h2><p>无论是对于人名,还是企业名产品名,命名都有着巨大的力量</p>
-<hr>
-<h2 id="命名其实很难"><a href="#命名其实很难" class="headerlink" title="命名其实很难"></a>命名其实很难</h2><p>起名字这件事看似不难,但是要经过深思熟虑,取出名副其实.表达性好的名字并不是一件很容易的事</p>
-<p>命名为什么难呢?因为命名的过程本身就是一个抽象和思考的过程,在工作中,当我们不能给一个模块,一个对象,一个函数,甚至一个变量找到合适的名称的时候,<strong>往往说明我们对问题的理解还不够透彻,而需要重新去挖掘问题的本质,对问题域进行重新分析和抽象,有时还要设计和重构代码.</strong>因此,好的名字是我们写出好代码的基础.</p>
-<hr>
-<h2 id="有意义的命名"><a href="#有意义的命名" class="headerlink" title="有意义的命名"></a>有意义的命名</h2><p>代码即是文档,可读性好的代码应该有一定的自明性,也就是不借助注释和文档,代码本身就能显性化的表达开发者的意图.这种自明性在很大的程度上依赖于我们对问题域的理解,以及命名是否合理.</p>
-<p>通常如果我们无法想出一个合适的名字,很可能意味着代码”坏味道”.设计有问题.这时候可以思考一下,是不是一个方法里实现了太多的功能?或者类的封装内聚性不够?又或者是我们对问题的理解还不够透彻?需要获取更多的信息?</p>
-<hr>
-<h2 id="变量名"><a href="#变量名" class="headerlink" title="变量名"></a>变量名</h2><p>变量名应该是名词,能够正确的描述业务,有表达力.如果一个变量名需要注释来补充说明,那么很有可能说明明明就有问题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int d;&#x2F;&#x2F;表示过去的天数</span><br></pre></td></tr></table></figure>
-<p>观察上面的命名,我们只能从注释中知道变量d指的是什么.那假如没有注释呢?没有注释,阅读代码的人为了知道d的含义,就不得不去寻找它的实例以获取线索.如果我们能够按照下面这样的方式给这个变量命名,阅读代码的人就很容易知道了这个变量的含义.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int elapsedTimeInDays;</span><br></pre></td></tr></table></figure>
-<h2 id="函数名"><a href="#函数名" class="headerlink" title="函数名"></a>函数名</h2><p>函数的命名要体现做什么,而不是怎么做.假如我们将雇员的信息存储在一个栈中,现在需要从栈中获取最近存储的一个雇员信息,那么<strong>getLatestEmployee()就比popRecord()要好</strong>,因为栈数据结构是底层实现细节,命名应该提升抽象层次,体现业务语义.合理的命名可以是我们省略掉记住”出栈”的脑力步骤,我们只需要简单地说”取最近雇员的信息”.</p>
-<h2 id="类名"><a href="#类名" class="headerlink" title="类名"></a>类名</h2><p>类是面向对象中最重要的概念之一,是一组数据和操作的封装.对于一个应用系统,我们可以将类分为两大类:实体类和辅助类.</p>
-<p>实体类承载了核心业务数据和核心业务逻辑,其命名要充分体现业务语义,并在团队内达成共识,如Customer,Bank和Employee等.</p>
-<p>辅助类是辅佐实体类一起完成业务逻辑的,其命名要能够通过后缀来体现功能.例如,用来为Customer做控制路由的控制类CustomerController/提供Customer服务的服务类CustomerService,获取数据存储的仓储类CustomerRepository.</p>
-<p>对于辅助类,尽量不要用Helper,Util之类的后缀,因为其含义太过笼统,容易破坏SRp(单一职责原则).比如对于处理CSV,可以这样写:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CSVHelper.parse(String)</span><br><span class="line">CSVHelper.create(int[])</span><br></pre></td></tr></table></figure>
-
+              <p>&lt;Excerpt in index | 首页摘要&gt;<br>+
+          
       
     </div>
     
@@ -328,6 +308,14 @@
       
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/" rel="tag">命名规范</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/02/29/%E5%91%BD%E5%90%8D/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -375,96 +363,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="第一步-环境搭建"><a href="#第一步-环境搭建" class="headerlink" title="第一步 环境搭建"></a>第一步 环境搭建</h2><p>1.安装Node.js</p>
-<p><a href="https://nodejs.org" target="_blank" rel="noopener">https://nodejs.org</a></p>
-<p>2.安装Git</p>
-<p><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a></p>
-<hr>
-<h2 id="第二步-安装Hexo"><a href="#第二步-安装Hexo" class="headerlink" title="第二步 安装Hexo"></a>第二步 安装Hexo</h2><ul>
-<li>win系统打开终端<ul>
-<li>win健 + R ,输入cmd</li>
-<li>开始菜单鼠标右键,选择PowerShell(尽量以管理员模式下进行)</li>
-<li>也可以打开VS Code,按Ctrl + ` 打开终端</li>
-</ul>
-</li>
-</ul>
-<p>1.通过npm包管理工具指定网址安装cnpm</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
-<p>2.利用cnpm来安装全局hexo</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p>3.验证hexo安装是否成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="第三步-创建博客"><a href="#第三步-创建博客" class="headerlink" title="第三步 创建博客"></a>第三步 创建博客</h2><p>1.新建文件夹mkdir + 文件名, 文件名不需要加”</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br></pre></td></tr></table></figure>
-<p>mkdir blog 就创建了文件夹名为blog的文件夹</p>
-<p><strong>如果在搭建博客过程中出现任何问题,大不了把文件夹删掉重来,无需担心</strong></p>
-<p>2.进入创建之后的文件夹</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd blog</span><br></pre></td></tr></table></figure>
-
-<p>3.初始化博客(新建一个网站)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-
-<p>4.出现Start blogging with Hexo! 证明初始化成功</p>
-<p>5.dir命令可以查看当前目录下的所有文件</p>
-<p>6.hexo server命令启动服务器(可简写为hexo s)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<p>7.可打开浏览器,在网址栏输入localhost:4000,回车键即可查看</p>
-<hr>
-<h2 id="第四步-新建文章"><a href="#第四步-新建文章" class="headerlink" title="第四步 新建文章"></a>第四步 新建文章</h2><p>1.hexo new 文章名 新建一篇文章 (<strong>注意文章名需要加”</strong>)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;我的第一篇博客&quot;</span><br></pre></td></tr></table></figure>
-
-<p>2.命令cd source/_posts 进入资源目录 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd source&#x2F;_posts</span><br></pre></td></tr></table></figure>
-
-<p>3.dir 可查看目录下新建的文章</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dir</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="第五步-编辑文章"><a href="#第五步-编辑文章" class="headerlink" title="第五步 编辑文章"></a>第五步 编辑文章</h2><p>1.可使用编辑器VS Code等, Markdown软件Typora等打开后缀名为.md的文件</p>
-<p>2.编辑文章内容参考Markdown语法即可</p>
-<p>3.编辑完成之后返回到主目录,也就是一开始新建的文件夹</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ..&#x2F;..</span><br></pre></td></tr></table></figure>
-
-<p>4.hexo clean 清除缓存文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-
-<p>5.hexo generate 生成静态文件(可简写为hexo g)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>6.hexo server 启动服务器(可简写为hexo s)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<p>7.本地搭建已经完成</p>
-<h2 id="第六步-部署到GitHub"><a href="#第六步-部署到GitHub" class="headerlink" title="第六步 部署到GitHub"></a>第六步 部署到GitHub</h2><p>1.首先登录GitHub个人账号</p>
-<p>2.创建新的存储库</p>
-<p><img src="http://m.qpic.cn/psc?/V13gNHkc39q2BX/OgsY8p8GsL2M2s50.OYmemjV7kUpmlrbw8VXbtjvHmF57y3VigP*Hi14nD7IorhBOPWThfkXb.mhY7YzOkIipvfLxFcGGB.8TjOVb7dZd1Y!/b&bo=awfTAgAAAAADB58!&rf=viewer_4" alt="img"></p>
-<p>3.部署个人博客github地址</p>
-<p><img src="http://m.qpic.cn/psc?/V13gNHkc39q2BX/OgsY8p8GsL2M2s50.OYmerdH3LJaxcTOLVhNZqIzuocMjpxQCZoyzwqDDbpx0mDgihELIZrczZgLUvaVrZKCqysWnH*5SxWo17GAIh1RUZ0!/b&bo=mATyAgAAAAADB04!&rf=viewer_4" alt="image-20200227121318434"></p>
-<p>4.创建存储库</p>
-<p><img src="http://m.qpic.cn/psc?/V13gNHkc39q2BX/OgsY8p8GsL2M2s50.OYmeqhdkNdgZk5Oi9C5xZeFFZaSGaMZjPQrhctkQQbqP0O.oquNXRBSHvFzUX9xI35xe9pun890sq2zwV9lQEBPE0w!/b&bo=TAQtAwAAAAADF1Q!&rf=viewer_4" alt="image-20200227121614870"></p>
-<p>5.创建完成</p>
-<p><img src="http://m.qpic.cn/psc?/V13gNHkc39q2BX/OgsY8p8GsL2M2s50.OYmeqYru8hPFoTGL*4IDJmChxabdFTfvbq4ZnVYyOLWSWN0XQQy*W0AXwnjWYPs*9JFUyxiQbIHcP3ECbOhB6kYOZs!/b&bo=hQUnAwAAAAADF5Y!&rf=viewer_4" alt="image-20200227121810207"></p>
-<p>6.创建git部署的插件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://m.qpic.cn/psc?/V13gNHkc39q2BX/OgsY8p8GsL2M2s50.OYmeilagqe4zw7m*M*2g04BeZl4di4EUOKGd0kbybNFOPBbt8gNIPHYoOKs3hCmD8drAZJjx97pAeYPkmUz*iWGBaY!/b&bo=lAJgAAAAAAADF8Q!&rf=viewer_4" alt="image-20200227122046823"></p>
-<p>7.使用VS Code打开_config.yml文件</p>
-<p><img src="http://m.qpic.cn/psc?/V13gNHkc39q2BX/OgsY8p8GsL2M2s50.OYmeg5eWIpD5IYoDOh9n*QuPQ0cZNzb8h5exd5AMc9ulI84bfK4cLKIC0COs*eKL3w1Vap.TQZjeoRncSv.t5GYTsI!/b&bo=CANXAQAAAAADF28!&rf=viewer_4" alt="image-20200227122321559"></p>
-<p>8.编辑如下内容</p>
-<p><img src="http://m.qpic.cn/psc?/V13gNHkc39q2BX/OgsY8p8GsL2M2s50.OYmetyDMzoUOrF34wYxBqeB4XYkQZIx3Hq7LxQLR0BawdJP7S0OfQkzk93NSgzayA6QHKim9fX8t9so0wyw3EWCM5k!/b&bo=ZwN1AwAAAAADFyA!&rf=viewer_4" alt="image-20200227122925139"></p>
-<p>9.部署到远端</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>10.输入git账号和密码<br><img src="http://m.qpic.cn/psc?/V13gNHkc39q2BX/OgsY8p8GsL2M2s50.OYmeoqKHaHSEN6L8l6KfE8aI9LAefr*jWUo8zE1HpZlBbaQbW5.VsR9oZV7EE0bnYnqOppUEMD7c8FUimpXRNXFpqU!/b&bo=ZwUhAwAAAAADF3I!&rf=viewer_4" alt="image-20200227141120516"></p>
-<hr>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a></p>
-<hr>
-
+              <p>&lt;Excerpt in index | 首页摘要&gt;<br>+
+          
       
     </div>
     
@@ -473,6 +373,14 @@
       
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-GitHub-Node-js/" rel="tag">Hexo GitHub Node.js</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/02/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
